@@ -6,6 +6,9 @@ import pandas as pd
 from dotenv import load_dotenv
 import pymysql
 
+import pickle
+import numpy as np
+
 load_dotenv()
 host = os.getenv("host")
 user = os.getenv("user")
@@ -25,9 +28,11 @@ def read_sql_data():
         logging.info("Connection Established", mydb) 
         df = pd.read_sql_query('select * from students', mydb)
         print(df.head())
-
+        return df
 
     except Exception as ex:
         raise CustomException(ex)
     
-    return df
+def save_object =
+
+    
